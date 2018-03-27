@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "CoreDataHelper.h"
+#import <UIKit/UIKit.h>
 
 @interface AppDelegate ()
+
+@property(nonatomic, strong, readonly) CoreDataHelper *coreDataHelper;
 
 @end
 
@@ -17,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[self cdh] saveContext];
     return YES;
 }
 
@@ -39,7 +44,7 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If he application was previously in the background, optionally refresh the user interface.
 }
 
 
@@ -51,6 +56,17 @@
 
 
 #pragma mark - Core Data stack
+
+-(CoreDataHelper *)cdh {
+    if (debug == 1) {
+        PRINT_DEBUGINFO;
+    }
+    if (!_coreDataHelper) {
+        _coreDataHelper = [[CoreDataHelper alloc] init];
+        [_coreDataHelper setupCoreData];
+    }
+    return _coreDataHelper;
+}
 
 @synthesize persistentContainer = _persistentContainer;
 

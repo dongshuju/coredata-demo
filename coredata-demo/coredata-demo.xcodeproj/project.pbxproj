@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8341FA82206A58B3005C6A5C /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8341FA81206A58B3005C6A5C /* CoreDataHelper.m */; };
 		83D9D4A5206917FD003BA72A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D9D4A4206917FD003BA72A /* AppDelegate.m */; };
 		83D9D4A8206917FD003BA72A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D9D4A7206917FD003BA72A /* ViewController.m */; };
 		83D9D4AB206917FD003BA72A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D9D4A9206917FD003BA72A /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8341FA80206A58B3005C6A5C /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		8341FA81206A58B3005C6A5C /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		83D9D4A0206917FD003BA72A /* coredata-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coredata-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D9D4A3206917FD003BA72A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83D9D4A4206917FD003BA72A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8341FA7E206A586D005C6A5C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8341FA7F206A5889005C6A5C /* CoreData */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8341FA7F206A5889005C6A5C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8341FA80206A58B3005C6A5C /* CoreDataHelper.h */,
+				8341FA81206A58B3005C6A5C /* CoreDataHelper.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		83D9D497206917FD003BA72A = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +127,7 @@
 		83D9D4A2206917FD003BA72A /* coredata-demo */ = {
 			isa = PBXGroup;
 			children = (
+				8341FA7E206A586D005C6A5C /* Base */,
 				83D9D4A3206917FD003BA72A /* AppDelegate.h */,
 				83D9D4A4206917FD003BA72A /* AppDelegate.m */,
 				83D9D4A6206917FD003BA72A /* ViewController.h */,
@@ -281,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8341FA82206A58B3005C6A5C /* CoreDataHelper.m in Sources */,
 				83D9D4A8206917FD003BA72A /* ViewController.m in Sources */,
 				83D9D4DB20691845003BA72A /* coredata-start.md in Sources */,
 				83D9D4A5206917FD003BA72A /* AppDelegate.m in Sources */,
