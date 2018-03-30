@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		8341FA80206A58B3005C6A5C /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		8341FA81206A58B3005C6A5C /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		835E1D05206DD993002C5D22 /* coredata-plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "coredata-plan.md"; sourceTree = "<group>"; };
 		83D9D4A0206917FD003BA72A /* coredata-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coredata-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D9D4A3206917FD003BA72A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83D9D4A4206917FD003BA72A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 			children = (
 				83D9D4D920691845003BA72A /* coredata-structure.md */,
 				83D9D4DA20691845003BA72A /* coredata-start.md */,
+				835E1D05206DD993002C5D22 /* coredata-plan.md */,
 			);
 			path = documents;
 			sourceTree = "<group>";
