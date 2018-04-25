@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Sequence where Iterator.Element: AnyObject {
+extension Sequence where Element: AnyObject {
     func containsObjectIdentical(to object: AnyObject) -> Bool {
         return contains { $0 === object }
     }
