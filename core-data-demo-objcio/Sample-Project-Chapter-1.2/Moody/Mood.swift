@@ -20,6 +20,7 @@ final class Mood: NSManagedObject {
         guard let lat = latitude, let lon = longitude else { return nil }
         return CLLocation(latitude: lat.doubleValue, longitude: lon.doubleValue)
     }
+    
 
     public static func insert(into context: NSManagedObjectContext, image: UIImage, location: CLLocation?, placemark: CLPlacemark?) -> Mood {
         let mood: Mood = context.insertObject()

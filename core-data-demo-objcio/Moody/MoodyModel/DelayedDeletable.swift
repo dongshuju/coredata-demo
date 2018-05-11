@@ -58,6 +58,7 @@ extension DelayedDeletable where Self: NSManagedObject, Self: Managed {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
         let cutoff = Date(timeIntervalSinceNow: -DeletionAgeBeforePermanentlyDeletingObjects)
         fetchRequest.predicate = NSPredicate(format: "%K < %@", MarkedForDeletionDateKey, cutoff as NSDate)
+        fetchRequest.resultType = .countResultType
         let batchRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         batchRequest.resultType = .resultTypeStatusOnly
         try! managedObjectContext.execute(batchRequest)
