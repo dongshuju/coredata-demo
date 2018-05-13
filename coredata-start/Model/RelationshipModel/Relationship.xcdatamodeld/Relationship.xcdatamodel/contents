@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Grade" representedClassName="Grade" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="Math" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="gradeLevel" inverseEntity="Student" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="grades" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gradeLevel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Grade" inverseName="students" inverseEntity="Grade" syncable="YES"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Teacher" inverseName="students" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Teacher" representedClassName="Teacher" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="grades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Grade" inverseName="teachers" inverseEntity="Grade" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="teachers" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="Grade" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="Teacher" positionX="27" positionY="72" width="128" height="90"/>
+    </elements>
+</model>

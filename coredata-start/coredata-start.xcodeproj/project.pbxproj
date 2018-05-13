@@ -23,6 +23,13 @@
 		8360FBD920A2CF8900D46AC3 /* Library+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FBD320A2CF8900D46AC3 /* Library+CoreDataProperties.swift */; };
 		8360FBDA20A2CF8900D46AC3 /* Reader+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FBD420A2CF8900D46AC3 /* Reader+CoreDataClass.swift */; };
 		8360FBDB20A2CF8900D46AC3 /* Reader+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FBD520A2CF8900D46AC3 /* Reader+CoreDataProperties.swift */; };
+		83C3016020A6EC7200F281BC /* Relationship.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83C3015E20A6EC7200F281BC /* Relationship.xcdatamodeld */; };
+		83C3016820A819E100F281BC /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016220A819E100F281BC /* Student+CoreDataClass.swift */; };
+		83C3016920A819E100F281BC /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016320A819E100F281BC /* Student+CoreDataProperties.swift */; };
+		83C3016A20A819E100F281BC /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016420A819E100F281BC /* Teacher+CoreDataClass.swift */; };
+		83C3016B20A819E100F281BC /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016520A819E100F281BC /* Teacher+CoreDataProperties.swift */; };
+		83C3016C20A819E100F281BC /* Grade+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016620A819E100F281BC /* Grade+CoreDataClass.swift */; };
+		83C3016D20A819E100F281BC /* Grade+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3016720A819E100F281BC /* Grade+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,13 @@
 		8360FBD320A2CF8900D46AC3 /* Library+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8360FBD420A2CF8900D46AC3 /* Reader+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reader+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8360FBD520A2CF8900D46AC3 /* Reader+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reader+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		83C3015F20A6EC7200F281BC /* Relationship.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Relationship.xcdatamodel; sourceTree = "<group>"; };
+		83C3016220A819E100F281BC /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		83C3016320A819E100F281BC /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		83C3016420A819E100F281BC /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
+		83C3016520A819E100F281BC /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		83C3016620A819E100F281BC /* Grade+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataClass.swift"; sourceTree = "<group>"; };
+		83C3016720A819E100F281BC /* Grade+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Grade+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +178,23 @@
 				8360FBD420A2CF8900D46AC3 /* Reader+CoreDataClass.swift */,
 				8360FBD520A2CF8900D46AC3 /* Reader+CoreDataProperties.swift */,
 				8360FB3520A0283C00D46AC3 /* CoreData.xcdatamodeld */,
+				83C3016120A6ED2B00F281BC /* RelationshipModel */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		83C3016120A6ED2B00F281BC /* RelationshipModel */ = {
+			isa = PBXGroup;
+			children = (
+				83C3016220A819E100F281BC /* Student+CoreDataClass.swift */,
+				83C3016320A819E100F281BC /* Student+CoreDataProperties.swift */,
+				83C3016420A819E100F281BC /* Teacher+CoreDataClass.swift */,
+				83C3016520A819E100F281BC /* Teacher+CoreDataProperties.swift */,
+				83C3016620A819E100F281BC /* Grade+CoreDataClass.swift */,
+				83C3016720A819E100F281BC /* Grade+CoreDataProperties.swift */,
+				83C3015E20A6EC7200F281BC /* Relationship.xcdatamodeld */,
+			);
+			path = RelationshipModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +332,15 @@
 				8360FBBB20A1816700D46AC3 /* LibraryTableViewController.swift in Sources */,
 				8360FBD720A2CF8900D46AC3 /* Book+CoreDataProperties.swift in Sources */,
 				8360FB02209FEA1400D46AC3 /* AppDelegate.swift in Sources */,
+				83C3016820A819E100F281BC /* Student+CoreDataClass.swift in Sources */,
+				83C3016B20A819E100F281BC /* Teacher+CoreDataProperties.swift in Sources */,
+				83C3016020A6EC7200F281BC /* Relationship.xcdatamodeld in Sources */,
 				8360FB3720A0283C00D46AC3 /* CoreData.xcdatamodeld in Sources */,
+				83C3016C20A819E100F281BC /* Grade+CoreDataClass.swift in Sources */,
+				83C3016920A819E100F281BC /* Student+CoreDataProperties.swift in Sources */,
+				83C3016A20A819E100F281BC /* Teacher+CoreDataClass.swift in Sources */,
 				8360FBBD20A1821600D46AC3 /* ReadersTableViewController.swift in Sources */,
+				83C3016D20A819E100F281BC /* Grade+CoreDataProperties.swift in Sources */,
 				8360FBD820A2CF8900D46AC3 /* Library+CoreDataClass.swift in Sources */,
 				8360FBD920A2CF8900D46AC3 /* Library+CoreDataProperties.swift in Sources */,
 				8360FBDA20A2CF8900D46AC3 /* Reader+CoreDataClass.swift in Sources */,
@@ -649,6 +685,16 @@
 			);
 			currentVersion = 8360FB3620A0283C00D46AC3 /* CoreData.xcdatamodel */;
 			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		83C3015E20A6EC7200F281BC /* Relationship.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				83C3015F20A6EC7200F281BC /* Relationship.xcdatamodel */,
+			);
+			currentVersion = 83C3015F20A6EC7200F281BC /* Relationship.xcdatamodel */;
+			path = Relationship.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

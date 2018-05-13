@@ -14,53 +14,77 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func creatDevice(number: Int) -> () {
-        guard let entity = NSEntityDescription.entity(forEntityName: "Device", in: persistentContainer.viewContext) else {
+    func creatReaders(number: Int) -> () {
+        guard let entity = NSEntityDescription.entity(forEntityName: "Reader", in: persistentContainer.viewContext) else {
             fatalError("Could not creat entity")
         }
         
         for i in 1...number {
-            let device = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-            device.setValue("New device number: #\(i)", forKey: "name")
-            device.setValue(i % 3 == 0 ? "ipad" : "iphone", forKey: "deviceType")
-            device.setValue(i, forKey: "id")
+            let reader = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
+            reader.setValue("Name reader: #\(i)", forKey:"name")
+            reader.setValue(i * 20, forKey:"age")
         }
         
         saveContext()
     }
     
-    
-    
-    
-    
-    func printDevice(number: Int) -> () {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Device")
-        
-        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+    func printReader() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reader")
+        let sortDescriptor = NSSortDescriptor(key: "age", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         do {
             if let results = try persistentContainer.viewContext.fetch(fetchRequest) as? [NSManagedObject] {
                 for result in results {
-                    if let name = result.value(forKey: "name") as? String, let deviceType = result.value(forKey: "deviceType"){
-                        print("Got device \(deviceType) with name \(name)")
+                    if let name = result.value(forKey: "name") as? String, let age = result.value(forKey: "age"){
+                        print("Reader: '\(name)' with age \(age)")
                     }
                 }
             }
-            
         } catch {
             print("fetch request error")
         }
     }
     
-    func deleteDevice(name: String) -> () {
-        
+    func creatBooks(number: Int) -> () {
+        guard let entity = NSEntityDescription.entity(forEntityName: "Book", in: persistentContainer.viewContext) else {
+            fatalError("Could not creat entity")
+        }
+        for i in 1...number {
+            let book = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
+            book.setValue("Name book: #\(i)", forKey:"bookName")
+            book.setValue(i < number / 2 ? "story" : "english", forKey:"category")
+            book.setValue(NSDate(), forKey: "publicDate")
+        }
+        saveContext()
     }
+    
+    func printBooks() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Book")
+        let sortDescriptor = NSSortDescriptor(key: "category", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            if let results = try persistentContainer.viewContext.fetch(fetchRequest) as? [NSManagedObject] {
+                for result in results {
+                    if let name = result.value(forKey: "bookName"), let category = result.value(forKey: "category"){
+                        print("Book: '\(name)' with age \(category)")
+                    }
+                }
+            }
+        } catch {
+            print("fetch request error")
+        }
+    }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        creatDevice(number: 50)
-        printDevice(number: 10)
+//        creatReaders(number: 10)
+        printReader()
+        
+//        creatBooks(number: 10)
+//        printBooks()
+        
         return true
     }
 
@@ -91,26 +115,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
         let container = NSPersistentContainer(name: "CoreDataStack")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -125,8 +132,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }

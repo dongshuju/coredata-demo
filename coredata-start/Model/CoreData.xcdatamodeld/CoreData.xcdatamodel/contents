@@ -11,22 +11,29 @@
         <relationship name="library" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="books" inverseEntity="Library" syncable="YES"/>
         <relationship name="reader" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reader" inverseName="books" inverseEntity="Reader" syncable="YES"/>
     </entity>
-    <entity name="Library" representedClassName="Library" parentEntity="Base" syncable="YES">
+    <entity name="Library" representedClassName="Library" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
-        <relationship name="readers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reader" syncable="YES"/>
+        <relationship name="readers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reader" inverseName="library" inverseEntity="Reader" syncable="YES"/>
     </entity>
     <entity name="Reader" representedClassName="Reader" parentEntity="Base" syncable="YES">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
         <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="reader" inverseEntity="Book" syncable="YES"/>
+        <relationship name="library" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="readers" inverseEntity="Library" syncable="YES"/>
+    </entity>
+    <entity name="TestUnit" representedClassName="TestUnit" syncable="YES" codeGenerationType="class">
+        <attribute name="book" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reader" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="testId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <fetchRequest name="FetchRequest" entity="Library" predicateString="name CONTAINS &quot;Lib&quot;"/>
     <elements>
         <element name="Base" positionX="-162" positionY="-96" width="128" height="60"/>
         <element name="Book" positionX="-155" positionY="270" width="128" height="135"/>
         <element name="Library" positionX="-18" positionY="54" width="128" height="90"/>
-        <element name="Reader" positionX="43" positionY="270" width="128" height="105"/>
+        <element name="Reader" positionX="43" positionY="270" width="128" height="120"/>
+        <element name="TestUnit" positionX="-45" positionY="72" width="128" height="90"/>
     </elements>
 </model>

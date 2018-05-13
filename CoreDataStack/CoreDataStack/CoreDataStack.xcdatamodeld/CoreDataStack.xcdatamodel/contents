@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Device" representedClassName="Device" syncable="YES" codeGenerationType="class">
-        <attribute name="deviceType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
+    <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
+        <attribute name="bookName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publicDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Reader" representedClassName="Reader" syncable="YES" codeGenerationType="class">
+        <attribute name="age" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="200" defaultValueString="18" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="screen" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Device" positionX="-684" positionY="-540" width="128" height="103"/>
+        <element name="Reader" positionX="-684" positionY="-540" width="128" height="73"/>
+        <element name="Book" positionX="-675" positionY="-513" width="128" height="90"/>
     </elements>
 </model>

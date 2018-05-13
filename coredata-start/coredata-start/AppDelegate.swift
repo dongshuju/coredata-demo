@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         creatTestDataIfNeed()
-        
+        createRelationship()
         return true
     }
 
@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "CoreData", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "Relationship", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("Relationship.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
@@ -161,6 +161,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if self.persistentContainer.viewContext.hasChanges {
             self.saveContext()
+        }
+    }
+    
+    
+    func createRelationship() {
+        
+        guard let gradeEntity = NSEntityDescription.entity(forEntityName: "Grade", in: managedObjectContext) else {
+            fatalError("Could not creat entity")
+        }
+        
+        guard let studentEntity = NSEntityDescription.entity(forEntityName: "Student", in: managedObjectContext) else {
+            fatalError("Could not creat entity")
+        }
+    
+        guard let teacderEntity = NSEntityDescription.entity(forEntityName: "Teacher", in: managedObjectContext) else {
+            fatalError("Could not creat entity")
+        }
+        
+        // creat grade NSManagedObject
+        let grade1 = NSManagedObject(entity: gradeEntity, insertInto: managedObjectContext) as! Grade
+        grade1.name = "grade--1"
+        
+        
+         let grade2 = NSManagedObject(entity: gradeEntity, insertInto: managedObjectContext) as! Grade
+        grade2.name = "grade--2"
+        
+        let grade3 = NSManagedObject(entity: gradeEntity, insertInto: managedObjectContext) as! Grade
+        grade3.name = "grade--3"
+        
+        //creat teachers
+        let teacherA = NSManagedObject(entity: teacderEntity, insertInto: managedObjectContext) as! Teacher
+        teacherA.name = "teacher--A"
+        
+        let teacherB = NSManagedObject(entity: teacderEntity, insertInto: managedObjectContext) as! Teacher
+        teacherB.name = "teacher--B"
+        
+        let teacherC = NSManagedObject(entity: teacderEntity, insertInto: managedObjectContext) as! Teacher
+        teacherC.name = "teacher--C"
+        
+        // creat students
+        let student001 = NSManagedObject(entity: studentEntity, insertInto: managedObjectContext) as! Student
+        student001.name = "student--001"
+        
+        let student002 = NSManagedObject(entity: studentEntity, insertInto: managedObjectContext) as! Student
+        student002.name = "student--002"
+        
+        let student003 = NSManagedObject(entity: studentEntity, insertInto: managedObjectContext) as! Student
+        student003.name = "student--003"
+        
+        //creat relationship
+        student001.gradeLevel = grade1
+        student002.gradeLevel = grade2
+        student003.gradeLevel = grade3
+        
+        student001.teachers.insert(teacherC)
+        student001.teachers.insert(teacherA)
+        
+        student002.teachers.insert(teacherB)
+        student002.teachers.insert(teacherA)
+        
+        student003.teachers.insert(teacherB)
+        student003.teachers.insert(teacherC)
+        
+        grade1.teachers.insert(teacherA)
+        grade1.teachers.insert(teacherC)
+        
+        grade2.teachers.insert(teacherB)
+        grade2.teachers.insert(teacherA)
+        
+        grade3.teachers.insert(teacherB)
+        grade3.teachers.insert(teacherC)
+        
+        teacherA.grades?.insert(grade1)
+        teacherA.grades?.insert(grade2)
+        
+        teacherB.grades?.insert(grade3)
+        teacherB.grades?.insert(grade2)
+        
+        teacherC.grades?.insert(grade1)
+        teacherC.grades?.insert(grade3)
+        teacherC.grades?.insert(grade2)
+        
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Save context error")
         }
     }
 }
