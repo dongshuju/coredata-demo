@@ -13,7 +13,7 @@
     </entity>
     <entity name="Library" representedClassName="Library" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
+        <relationship name="books" toMany="YES" deletionRule="Cascade" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
         <relationship name="readers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reader" inverseName="library" inverseEntity="Reader" syncable="YES"/>
     </entity>
     <entity name="Reader" representedClassName="Reader" parentEntity="Base" syncable="YES">

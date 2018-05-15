@@ -19,5 +19,12 @@ extension Grade {
 
     @NSManaged public var name: String?
     @NSManaged public var teachers: Set<Teacher>
+    @NSManaged public var students: Set<Student>
+    
+    public func printStudents () {
+        for student in students {
+            print("Students: \(String(describing: student.name))")
+        }
+    }
 
 }

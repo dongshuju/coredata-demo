@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         creatTestDataIfNeed()
-        createRelationship()
+//        createRelationship()
         return true
     }
 
@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if libraries.count < 1 {
             
             let library1 = NSManagedObject(entity: librayEntity, insertInto: self.persistentContainer.viewContext) as! Library
-            library1.name = "TanTan Lib"
+            library1.name = "English Lib"
             
             for i in 1...10 {
                 let book = NSManagedObject(entity: entity, insertInto: self.persistentContainer.viewContext) as! Book
@@ -147,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             let library2 = NSManagedObject(entity: librayEntity, insertInto: self.persistentContainer.viewContext) as! Library
-            library2.name = "Omi Lib"
+            library2.name = "Math Lib"
             for i in 1...10 {
                 let book = NSManagedObject(entity: entity, insertInto: self.persistentContainer.viewContext) as! Book
                 book.name = "Math Book series: #\(i)"
@@ -210,10 +210,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let student003 = NSManagedObject(entity: studentEntity, insertInto: managedObjectContext) as! Student
         student003.name = "student--003"
         
+        let student004 = NSManagedObject(entity: studentEntity, insertInto: managedObjectContext) as! Student
+        student004.name = "student--004"
+
+        
         //creat relationship
         student001.gradeLevel = grade1
         student002.gradeLevel = grade2
         student003.gradeLevel = grade3
+        
         
         student001.teachers.insert(teacherC)
         student001.teachers.insert(teacherA)
@@ -233,6 +238,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         grade3.teachers.insert(teacherB)
         grade3.teachers.insert(teacherC)
         
+        grade3.students.insert(student004)
+        
         teacherA.grades?.insert(grade1)
         teacherA.grades?.insert(grade2)
         
@@ -248,6 +255,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try managedObjectContext.save()
         } catch {
             fatalError("Save context error")
+        }
+        
+        let grades = try! managedObjectContext.fetch(Grade.fetchRequest()) as! [Grade]
+        for grade in grades {
+            print("grade name: \(String(describing: grade.name)), grade students")
+            grade.printStudents()
         }
     }
 }

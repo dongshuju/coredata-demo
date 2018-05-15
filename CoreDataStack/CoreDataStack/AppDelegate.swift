@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reader")
         let sortDescriptor = NSSortDescriptor(key: "age", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        
         do {
             if let results = try persistentContainer.viewContext.fetch(fetchRequest) as? [NSManagedObject] {
                 for result in results {
@@ -82,8 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        creatReaders(number: 10)
         printReader()
         
-//        creatBooks(number: 10)
-//        printBooks()
+        creatBooks(number: 10)
+        printBooks()
         
         return true
     }
