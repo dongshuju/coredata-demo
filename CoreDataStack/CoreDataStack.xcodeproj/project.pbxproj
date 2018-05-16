@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8344696620ABF1080019AFE6 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696020ABF1080019AFE6 /* Book+CoreDataClass.swift */; };
+		8344696720ABF1080019AFE6 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696120ABF1080019AFE6 /* Book+CoreDataProperties.swift */; };
+		8344696820ABF1080019AFE6 /* Reader+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696220ABF1080019AFE6 /* Reader+CoreDataClass.swift */; };
+		8344696920ABF1080019AFE6 /* Reader+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696320ABF1080019AFE6 /* Reader+CoreDataProperties.swift */; };
+		8344696A20ABF1080019AFE6 /* AllType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696420ABF1080019AFE6 /* AllType+CoreDataClass.swift */; };
+		8344696B20ABF1080019AFE6 /* AllType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344696520ABF1080019AFE6 /* AllType+CoreDataProperties.swift */; };
 		8360FB4720A073B300D46AC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FB4620A073B300D46AC3 /* AppDelegate.swift */; };
 		8360FB4920A073B300D46AC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FB4820A073B300D46AC3 /* ViewController.swift */; };
 		8360FB4C20A073B300D46AC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8360FB4A20A073B300D46AC3 /* Main.storyboard */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8344696020ABF1080019AFE6 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8344696120ABF1080019AFE6 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8344696220ABF1080019AFE6 /* Reader+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reader+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8344696320ABF1080019AFE6 /* Reader+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reader+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8344696420ABF1080019AFE6 /* AllType+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllType+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8344696520ABF1080019AFE6 /* AllType+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8360FB4320A073B300D46AC3 /* CoreDataStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8360FB4620A073B300D46AC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8360FB4820A073B300D46AC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +111,12 @@
 		8360FB4520A073B300D46AC3 /* CoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
+				8344696020ABF1080019AFE6 /* Book+CoreDataClass.swift */,
+				8344696120ABF1080019AFE6 /* Book+CoreDataProperties.swift */,
+				8344696220ABF1080019AFE6 /* Reader+CoreDataClass.swift */,
+				8344696320ABF1080019AFE6 /* Reader+CoreDataProperties.swift */,
+				8344696420ABF1080019AFE6 /* AllType+CoreDataClass.swift */,
+				8344696520ABF1080019AFE6 /* AllType+CoreDataProperties.swift */,
 				8360FB4620A073B300D46AC3 /* AppDelegate.swift */,
 				8360FB4820A073B300D46AC3 /* ViewController.swift */,
 				8360FB4A20A073B300D46AC3 /* Main.storyboard */,
@@ -259,8 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8344696B20ABF1080019AFE6 /* AllType+CoreDataProperties.swift in Sources */,
+				8344696820ABF1080019AFE6 /* Reader+CoreDataClass.swift in Sources */,
 				8360FB4920A073B300D46AC3 /* ViewController.swift in Sources */,
 				8360FB4720A073B300D46AC3 /* AppDelegate.swift in Sources */,
+				8344696620ABF1080019AFE6 /* Book+CoreDataClass.swift in Sources */,
+				8344696720ABF1080019AFE6 /* Book+CoreDataProperties.swift in Sources */,
+				8344696A20ABF1080019AFE6 /* AllType+CoreDataClass.swift in Sources */,
+				8344696920ABF1080019AFE6 /* Reader+CoreDataProperties.swift in Sources */,
 				8360FB4F20A073B300D46AC3 /* CoreDataStack.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         for i in 1...number {
-            let reader = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-            reader.setValue("Name reader: #\(i)", forKey:"name")
-            reader.setValue(i * 20, forKey:"age")
+            let reader = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext) as! Reader
+//            reader.setValue("Name reader: #\(i)", forKey:"name")
+            reader.name = "Name reader: #\(i)"
+//            reader.setValue(Int16(i * 20), forKey:"age")
+            reader.age = Int16(i * 20)
         }
         
         saveContext()
@@ -51,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         for i in 1...number {
             let book = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext)
-            book.setValue("Name book: #\(i)", forKey:"bookName")
+//            book.setValue("Name book: #\(i)", forKey:"bookName")
             book.setValue(i < number / 2 ? "story" : "english", forKey:"category")
             book.setValue(NSDate(), forKey: "publicDate")
         }
@@ -78,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        creatReaders(number: 10)
+        creatReaders(number: 10)
         printReader()
         
         creatBooks(number: 10)
