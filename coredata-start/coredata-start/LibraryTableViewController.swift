@@ -32,7 +32,7 @@ class LibraryTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest<Library>(entityName: "Library")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.viewContext, sectionNameKeyPath: nil, cacheName: "Library.cache")
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         self.fetchedResultsController.delegate = self
         
         do {
@@ -40,16 +40,10 @@ class LibraryTableViewController: UITableViewController {
         } catch let error as NSError {
             print("Error: \(error.userInfo)")
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error as NSError {
-            print("Error: \(error.userInfo)")
-        }
     }
     
     func addTestData() {

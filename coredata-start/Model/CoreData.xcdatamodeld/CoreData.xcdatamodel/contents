@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AbstractEntity" representedClassName="AbstractEntity" isAbstract="YES" syncable="YES" codeGenerationType="class"/>
     <entity name="Base" representedClassName="Base" syncable="YES" codeGenerationType="class">
         <attribute name="debugId" optional="YES" attributeType="String" minValueString="2" maxValueString="10" defaultValueString="00000" syncable="YES"/>
     </entity>
@@ -13,7 +14,7 @@
     </entity>
     <entity name="Library" representedClassName="Library" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="books" toMany="YES" deletionRule="Cascade" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
+        <relationship name="books" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
         <relationship name="readers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reader" inverseName="library" inverseEntity="Reader" syncable="YES"/>
     </entity>
     <entity name="Reader" representedClassName="Reader" parentEntity="Base" syncable="YES">
@@ -23,17 +24,19 @@
         <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="reader" inverseEntity="Book" syncable="YES"/>
         <relationship name="library" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="readers" inverseEntity="Library" syncable="YES"/>
     </entity>
-    <entity name="TestUnit" representedClassName="TestUnit" syncable="YES" codeGenerationType="class">
+    <entity name="SubEntity" representedClassName="SubEntity" parentEntity="AbstractEntity" syncable="YES" codeGenerationType="class"/>
+    <entity name="TestUnit" representedClassName="TestUnit" parentEntity="AbstractEntity" syncable="YES" codeGenerationType="class">
         <attribute name="book" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reader" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="testId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <fetchRequest name="FetchRequest" entity="Library" predicateString="name CONTAINS &quot;Lib&quot;"/>
     <elements>
         <element name="Base" positionX="-162" positionY="-96" width="128" height="60"/>
-        <element name="Book" positionX="-155" positionY="270" width="128" height="135"/>
-        <element name="Library" positionX="-18" positionY="54" width="128" height="90"/>
-        <element name="Reader" positionX="43" positionY="270" width="128" height="120"/>
-        <element name="TestUnit" positionX="-45" positionY="72" width="128" height="90"/>
+        <element name="Book" positionX="-279" positionY="171" width="128" height="133"/>
+        <element name="Library" positionX="151" positionY="396" width="128" height="88"/>
+        <element name="Reader" positionX="52" positionY="90" width="128" height="118"/>
+        <element name="TestUnit" positionX="252" positionY="108" width="128" height="88"/>
+        <element name="AbstractEntity" positionX="-54" positionY="72" width="128" height="45"/>
+        <element name="SubEntity" positionX="-45" positionY="81" width="128" height="45"/>
     </elements>
 </model>

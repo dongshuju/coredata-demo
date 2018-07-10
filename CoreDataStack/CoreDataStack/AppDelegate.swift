@@ -47,6 +47,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func creatAlltype(number: Int) -> () {
+        guard let entity = NSEntityDescription.entity(forEntityName: "AllType", in: persistentContainer.viewContext) else {
+            fatalError("Could not creat entity")
+        }
+        
+        for _ in 1...number {
+            let allType = NSManagedObject(entity: entity, insertInto: persistentContainer.viewContext) as! AllType
+            allType.typeString = "String"
+            allType.typeURI = NSURL.fileURL(withPath: "com.tantan.omi")
+            allType.typeDate = NSDate()
+            allType.typeFloat = 0.111111
+            allType.typeInt16 = 12212
+            allType.typeInt32 = 1231232112
+            allType.typeInt64 = 1212211212212121
+            allType.typeDecimal = NSDecimalNumber(value: 1122123.5)
+            allType.typeUndefine = NSArray(array: [12, 12, 113])
+            allType.typeTransformable = UIColor.red
+            allType.typeBinary = NSData(data: "aaa".data(using: .utf8)!)
+        }
+        saveContext()
+    }
+    
     func creatBooks(number: Int) -> () {
         guard let entity = NSEntityDescription.entity(forEntityName: "Book", in: persistentContainer.viewContext) else {
             fatalError("Could not creat entity")
@@ -80,12 +102,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        creatReaders(number: 10)
+        creatReaders(number: 3)
+        printReader()
         printReader()
         
-        creatBooks(number: 10)
+        creatBooks(number: 3)
+        printBooks()
+        printBooks()
         printBooks()
         
+        creatAlltype(number: 2)
+
         return true
     }
 

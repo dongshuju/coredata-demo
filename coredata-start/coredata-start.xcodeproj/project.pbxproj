@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8344695F20AAE3240019AFE6 /* Relationship-v1-to-v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8344695E20AAE3240019AFE6 /* Relationship-v1-to-v2.xcmappingmodel */; };
+		8344696E20AD70E10019AFE6 /* MapModel2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8344696D20AD70E10019AFE6 /* MapModel2.xcmappingmodel */; };
 		8360FB02209FEA1400D46AC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360FB01209FEA1400D46AC3 /* AppDelegate.swift */; };
 		8360FB09209FEA1400D46AC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8360FB07209FEA1400D46AC3 /* Main.storyboard */; };
 		8360FB0B209FEA1500D46AC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8360FB0A209FEA1500D46AC3 /* Assets.xcassets */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		8344695D20AAE1760019AFE6 /* Relationship 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Relationship 2.xcdatamodel"; sourceTree = "<group>"; };
 		8344695E20AAE3240019AFE6 /* Relationship-v1-to-v2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "Relationship-v1-to-v2.xcmappingmodel"; sourceTree = "<group>"; };
+		8344696C20AD705B0019AFE6 /* Relationship 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Relationship 3.xcdatamodel"; sourceTree = "<group>"; };
+		8344696D20AD70E10019AFE6 /* MapModel2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MapModel2.xcmappingmodel; sourceTree = "<group>"; };
 		8360FAFE209FEA1400D46AC3 /* coredata-start.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coredata-start.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8360FB01209FEA1400D46AC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8360FB08209FEA1400D46AC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 				83C3016720A819E100F281BC /* Grade+CoreDataProperties.swift */,
 				83C3015E20A6EC7200F281BC /* Relationship.xcdatamodeld */,
 				8344695E20AAE3240019AFE6 /* Relationship-v1-to-v2.xcmappingmodel */,
+				8344696D20AD70E10019AFE6 /* MapModel2.xcmappingmodel */,
 			);
 			path = RelationshipModel;
 			sourceTree = "<group>";
@@ -336,6 +340,7 @@
 				8360FBBB20A1816700D46AC3 /* LibraryTableViewController.swift in Sources */,
 				8360FBD720A2CF8900D46AC3 /* Book+CoreDataProperties.swift in Sources */,
 				8360FB02209FEA1400D46AC3 /* AppDelegate.swift in Sources */,
+				8344696E20AD70E10019AFE6 /* MapModel2.xcmappingmodel in Sources */,
 				83C3016820A819E100F281BC /* Student+CoreDataClass.swift in Sources */,
 				83C3016B20A819E100F281BC /* Teacher+CoreDataProperties.swift in Sources */,
 				83C3016020A6EC7200F281BC /* Relationship.xcdatamodeld in Sources */,
@@ -696,10 +701,11 @@
 		83C3015E20A6EC7200F281BC /* Relationship.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				8344696C20AD705B0019AFE6 /* Relationship 3.xcdatamodel */,
 				8344695D20AAE1760019AFE6 /* Relationship 2.xcdatamodel */,
 				83C3015F20A6EC7200F281BC /* Relationship.xcdatamodel */,
 			);
-			currentVersion = 8344695D20AAE1760019AFE6 /* Relationship 2.xcdatamodel */;
+			currentVersion = 8344696C20AD705B0019AFE6 /* Relationship 3.xcdatamodel */;
 			path = Relationship.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

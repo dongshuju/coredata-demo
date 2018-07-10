@@ -42,7 +42,7 @@ class BooksTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest<Book>(entityName: "Book")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
-        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.viewContext, sectionNameKeyPath: "category", cacheName: "CacheName.Library")
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.viewContext, sectionNameKeyPath: "category", cacheName: nil)
         self.fetchedResultsController.delegate = self
 
         do {
